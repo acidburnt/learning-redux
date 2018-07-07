@@ -1,12 +1,16 @@
 import React from 'react';
+import AddTodo from 'containers/AddTodo';
+import VisibleTodoList from 'containers/VisibleTodoList';
+import Footer from 'components/Footer';
 import { hot } from 'react-hot-loader';
 
-import styles from './App.scss';
 
 function App() {
   return (
-    <div className={styles.app}>
-      <h1>REDUXXXXX</h1>
+    <div>
+      <AddTodo />
+      <VisibleTodoList />
+      <Footer />
     </div>
   );
 }

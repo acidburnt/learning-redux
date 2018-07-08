@@ -21,5 +21,6 @@ module.exports = {
     'react/jsx-filename-extension': [
       2, { extensions: ['.js'] },
     ],
+    'jsx-a11y/anchor-is-valid': 0,
   },
 };

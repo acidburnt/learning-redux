@@ -1,5 +1,5 @@
 import React from 'react';
-import { addTodo } from '../actions';
+import { addTodo } from 'actions/actions';
 
 function AddTodo({ dispatch }) {
   let input;

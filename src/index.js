@@ -1,30 +1,16 @@
+import registerServiceWorker from 'utils/registerServiceWorker';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import throttle from 'lodash/throttle';
-import todoApp from 'reducers/todoApp';
+import Root from 'components/Root';
 
 import 'normalize.css';
 
-import App from 'components/App';
-import registerServiceWorker from 'utils/registerServiceWorker';
+import configureStore from './configureStore';
 
-import { loadState, saveState } from './localStorage';
-
-const presistedState = loadState();
-
-const store = createStore(todoApp, presistedState);
-store.subscribe(throttle(() => {
-  saveState({
-    todos: store.getState().todos,
-  });
-}));
+const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Root store={store} />,
   document.getElementById('root'),
 );
 

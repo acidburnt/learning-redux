@@ -5,11 +5,11 @@ import Footer from 'components/Footer';
 import { hot } from 'react-hot-loader';
 
 
-function App({ match: { params } }) {
+function App() {
   return (
     <div>
       <AddTodo />
-      <VisibleTodoList filter={params.filter || 'all'} />
+      <VisibleTodoList />
       <Footer />
     </div>
   );

@@ -3,7 +3,7 @@ import React from 'react';
 function Todo({
   onClick,
   completed,
-  text
+  text,
 }) {
   return (
     <li onClick={onClick}

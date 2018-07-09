@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import * as actions from 'actions/actions';
-import { getVisibleTodos } from 'reducers/todoApp';
+import { getVisibleTodos } from 'reducers';
 import TodoList from 'components/TodoList';
 
 class VisibleTodoList extends Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import todoApp from 'reducers/todoApp';
+import todoApp from 'reducers';
 import { createStore } from 'redux';
 
 import { AppUnwrapped as App } from './App';

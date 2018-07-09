@@ -18,7 +18,7 @@ const fakeDAtabase = {
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-const fetchTodos = filter =>
+export const fetchTodos = filter =>
   delay(500).then(() => {
     if (Math.random() > 0.5) throw new Error('Boom!');
 
@@ -34,4 +34,20 @@ const fetchTodos = filter =>
     }
   });
 
-export default fetchTodos;
+export const addTodo = text =>
+  delay(500).then(() => {
+    const todo = {
+      id: v4(),
+      text,
+      completed: false,
+    };
+    fakeDAtabase.todos.push(todo);
+    return todo;
+  });
+
+export const toggleTodo = id =>
+  delay(500).then(() => {
+    const todo = fakeDAtabase.todos.find(t => t.id === id);
+    todo.completed = !todo.completed;
+    return todo;
+  });

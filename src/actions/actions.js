@@ -1,10 +1,16 @@
 import { v4 } from 'node-uuid';
+import fetchData from 'api';
 
-export const receiveTodos = (filter, response) => ({
+const receiveTodos = (filter, response) => ({
   type: 'RECEIVE_TODOS',
   filter,
   response,
 });
+
+export const fetchTodos = filter =>
+  fetchData(filter).then(response =>
+    receiveTodos(filter, response),
+  );
 
 export const addTodo = text => ({
   type: 'ADD_TODO',
